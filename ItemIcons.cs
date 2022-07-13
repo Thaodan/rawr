@@ -189,8 +189,8 @@ namespace Rawr
 
             Bitmap bmPhoto = new Bitmap(destWidth, destHeight,
                                         PixelFormat.Format24bppRgb);
-            bmPhoto.SetResolution(imgPhoto.HorizontalResolution,
-                                  imgPhoto.VerticalResolution);
+            bmPhoto.SetResolution(sourceHeight,
+                                  sourceWidth);
 
             Graphics grPhoto = Graphics.FromImage(bmPhoto);
             grPhoto.InterpolationMode = InterpolationMode.HighQualityBicubic;
