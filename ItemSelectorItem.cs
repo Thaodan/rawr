@@ -203,8 +203,15 @@ namespace Rawr
 
 		protected override void OnPaint(PaintEventArgs e)
 		{
-			e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-			e.Graphics.DrawImageUnscaled(PrerenderedImage, 0, 0);
+			try
+			{
+				e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+				e.Graphics.DrawImageUnscaled(PrerenderedImage, 0, 0);
+			}
+			catch (Exception ex)
+			{
+				ex.ToString();
+			}
 		}
 
 		private Bitmap _prerenderedImage = null;
